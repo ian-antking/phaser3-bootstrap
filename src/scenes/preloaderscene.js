@@ -17,10 +17,12 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   preload() {
+    const canvas = document.querySelector('canvas');
+    const progressBarX = (canvas.width / 2) - 160;
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();
     progressBox.fillStyle(0x222222, 0.8);
-    progressBox.fillRect(240, 270, 320, 50);
+    progressBox.fillRect(progressBarX, 270, 320, 50);
 
     const width = this.cameras.main.width;
     const height = this.cameras.main.height;
@@ -61,7 +63,7 @@ export default class PreloaderScene extends Phaser.Scene {
       percentText.setText(`${parseInt(value * 100)}%`);
       progressBar.clear();
       progressBar.fillStyle(0xffffff, 1);
-      progressBar.fillRect(250, 280, 300 * value, 30);
+      progressBar.fillRect(progressBarX + 10, 280, 300 * value, 30);
     });
 
     this.load.on('fileprogress', (file) => {
@@ -71,7 +73,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.on('complete', () => {
       progressBar.destroy();
       progressBox.destroy();
-      // loadingText.destroy();
+      loadingText.destroy();
       percentText.destroy();
       assetText.destroy();
       this.ready();
