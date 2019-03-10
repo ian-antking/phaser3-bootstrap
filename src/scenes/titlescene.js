@@ -9,6 +9,6 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(400, 300, 'logo');
+    this.add.image(300, 200, 'logo');
   }
 }
