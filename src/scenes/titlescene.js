@@ -25,9 +25,7 @@ export default class TitleScene extends Phaser.Scene {
     });
     titleText.setOrigin(0.5, 0.5);
     this.spaceBar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-  }
 
-  update() {
     this.input.keyboard.on('keydown-SPACE', () => {
       this.scene.start('Game');
     });
