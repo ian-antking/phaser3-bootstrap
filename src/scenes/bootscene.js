@@ -20,8 +20,6 @@ export default class BootScene extends Phaser.Scene {
     }
   }
 
-  preload() {}
-
   create() {
     window.focus();
     this.resizeGame();

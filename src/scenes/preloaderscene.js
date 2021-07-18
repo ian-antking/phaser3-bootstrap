@@ -82,6 +82,4 @@ export default class PreloaderScene extends Phaser.Scene {
     this.timedEvent = this.time.delayedCall(1000, this.ready, [], this);
     this.load.image('logo', '../../assets/logo.png');
   }
-
-  create() {}
 }

@@ -5,8 +5,6 @@ export default class TitleScene extends Phaser.Scene {
     super('Title');
   }
 
-  preload() {}
-
   create() {
     const canvas = document.querySelector('canvas');
     this.logo = this.add.image(
