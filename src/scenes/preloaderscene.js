@@ -18,7 +18,7 @@ export default class PreloaderScene extends Phaser.Scene {
 
   preload() {
     const canvas = document.querySelector('canvas');
-    const progressBarX = (canvas.width / 2) - 160;
+    const progressBarX = canvas.width / 2 - 160;
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();
     progressBox.fillStyle(0x222222, 0.8);
@@ -83,6 +83,5 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('logo', '../../assets/logo.png');
   }
 
-  create() {
-  }
+  create() {}
 }

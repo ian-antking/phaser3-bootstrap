@@ -20,8 +20,7 @@ export default class BootScene extends Phaser.Scene {
     }
   }
 
-  preload() {
-  }
+  preload() {}
 
   create() {
     window.focus();

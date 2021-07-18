@@ -5,12 +5,15 @@ export default class TitleScene extends Phaser.Scene {
     super('Title');
   }
 
-  preload() {
-  }
+  preload() {}
 
   create() {
     const canvas = document.querySelector('canvas');
-    this.logo = this.add.image((canvas.width / 2), (canvas.height / 2) - 50, 'logo');
+    this.logo = this.add.image(
+      canvas.width / 2,
+      canvas.height / 2 - 50,
+      'logo'
+    );
     this.logo.setScale(0.75);
     const width = this.cameras.main.width;
     const height = this.cameras.main.height;
@@ -24,7 +27,9 @@ export default class TitleScene extends Phaser.Scene {
       },
     });
     titleText.setOrigin(0.5, 0.5);
-    this.spaceBar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+    this.spaceBar = this.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.SPACE
+    );
 
     this.input.keyboard.on('keydown-SPACE', () => {
       this.scene.start('Game');
